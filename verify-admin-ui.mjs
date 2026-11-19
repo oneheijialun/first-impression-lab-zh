@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const html=fs.readFileSync(new URL('./public/admin.html',import.meta.url),'utf8');
+const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(match=>match[1]));
+const nodes=new Map();
+for(const id of ids)nodes.set('#'+id,{value:'',checked:false,hidden:true,textContent:'',innerHTML:'',disabled:false});
+const context=vm.createContext({document:{querySelector(selector){if(!nodes.has(selector))throw Error('Missing admin element '+selector);return nodes.get(selector);}},sessionStorage:{getItem:()=>'',setItem(){}},console,URL,Blob,setTimeout,clearTimeout,setInterval,clearInterval,AbortSignal});
+for(const name of ['gaze-math.js','research-data.js'])vm.runInContext(fs.readFileSync(new URL('./public/'+name,import.meta.url),'utf8'),context);
+vm.runInContext(fs.readFileSync(new URL('./public/admin.js',import.meta.url),'utf8'),context);
+vm.runInContext("dataset={sessions:[],records:[]};manifest=[{id:'image',sourceFile:'test.png',complexity:'low'}];people=[];renderOverview();renderRatings();renderParticipants();",context);
+assert.ok(nodes.get('#metrics').innerHTML.includes('已开始测试'));
+assert.ok(!nodes.get('#metrics').innerHTML.includes('NaN'));
+assert.ok(nodes.get('#ratings-summary').innerHTML.includes('— / 0'));
+assert.ok(nodes.get('#participant-rows').innerHTML.includes('暂无匹配被试'));
+const source=fs.readFileSync(new URL('./public/admin.js',import.meta.url),'utf8');
+assert.ok(source.includes('500'));assert.ok(source.includes('includeExcluded'));
+console.log('PASS admin page element wiring, empty database overview, missing-value display, ratings summary and export controls');

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "low-pets",
+    "sourceFile": "低复杂度_宠物.png",
+    "complexity": "low",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "brandAnswers": [
+      "美佳宠物"
+    ],
+    "sha256": "1cc374e5feb75ab6adb1e96cf0c6000e4e3dc5b8b7f6bdf5b228e49618b592e3"
+  },
+  {
+    "id": "low-furniture",
+    "sourceFile": "低复杂度_家具.png",
+    "complexity": "low",
+    "dimensions": [
+      2549,
+      1242
+    ],
+    "brandAnswers": [
+      "梵几",
+      "FNJI"
+    ],
+    "sha256": "e8e0311a93848370d26ce99cf8469e88e5ed14a86f071cc66ddedb170af90702"
+  },
+  {
+    "id": "medium-weather",
+    "sourceFile": "中复杂度_天气.png",
+    "complexity": "medium",
+    "dimensions": [
+      3290,
+      1854
+    ],
+    "brandAnswers": [
+      "预报"
+    ],
+    "sha256": "f5d681225e04263f130b30189ad35614b6aa04c4061b10436e8904e4a5c69421"
+  },
+  {
+    "id": "medium-food",
+    "sourceFile": "中复杂度_食物.png",
+    "complexity": "medium",
+    "dimensions": [
+      2549,
+      1242
+    ],
+    "brandAnswers": [
+      "日食记生活馆",
+      "日食记"
+    ],
+    "sha256": "b7957893088355fe22a1678e93376de2b3c4ca12daebe5cfebac5eeea79556e5"
+  },
+  {
+    "id": "high-shopping",
+    "sourceFile": "高复杂度_购物.png",
+    "complexity": "high",
+    "dimensions": [
+      2549,
+      1352
+    ],
+    "brandAnswers": [
+      "momo",
+      "momo购物网",
+      "富邦媒"
+    ],
+    "sha256": "d14d99c3bce160b4f50b380858e64f8c4fc6f4e5b3f0b2adf1f956430a088a22"
+  },
+  {
+    "id": "high-games",
+    "sourceFile": "高复杂度-游戏.png",
+    "complexity": "high",
+    "dimensions": [
+      2549,
+      1242
+    ],
+    "brandAnswers": [
+      "机核",
+      "gcores"
+    ],
+    "sha256": "c5ff8d7028e374dabbee94d454343bd85b846d4cc39ff1c7c99a99b505b24d31"
+  },
+  {
+    "id": "warmup-art",
+    "sourceFile": "热身_艺术馆.png",
+    "complexity": "practice",
+    "dimensions": [
+      2549,
+      1242
+    ],
+    "brandAnswers": [
+      "木木美术馆",
+      "木木",
+      "木木艺术社区",
+      "M WOODS",
+      "M WOODS MUSEUM"
+    ],
+    "sha256": "c1551c42ca9c1db523a7abe5485e0742cde65c2dc6a2e1d496bc42efdd954c7f"
+  }
+]
